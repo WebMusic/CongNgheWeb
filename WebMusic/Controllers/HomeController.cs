@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebMusic.Models;
 
@@ -32,7 +30,7 @@ namespace WebMusic.Controllers
         public PartialViewResult New_Track()
         {
 
-            List<NEW_TRACK> lst = new List<NEW_TRACK>();
+            List<NEW_TRACK> lst;
             lst = (from p in db.NEW_TRACK select p).OrderBy(p => p.RANKK).ToList();
 
             List<List<List<string>>> info = new List<List<List<string>>>();

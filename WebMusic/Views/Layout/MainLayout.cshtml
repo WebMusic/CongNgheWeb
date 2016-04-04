@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebMusic.Controllers
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -8,7 +9,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/Content/MainLayout_CSS/style-layout.css" rel="stylesheet" />
-  
+
 </head>
 
 <body>
@@ -269,39 +270,54 @@
         </div>
     </div>
 
-    <div class="tag-playmusic">
+    <div class="tag-playmusic" id="tagMusic">
+
         <audio id="myTune" controls>
-            <source src="~/music/17.mp3" type="audio/mpeg" />
+            <source src="@Model.LINK" type="audio/mpeg" />
         </audio>
 
         <div class="playmusic-info">
             <div class="imgPlayMusic">
-                <img src="./img/hot-remix/bastards.jpg" alt="">
+                <img src="@Model.LINK_IMG" alt="">
             </div>
             <div class="textPlayMusic">
-                <a href="#" class="playmusic-name">Clarity</a>
-                <a href="#" class="playmusic-artist">Hayley Williams ft Zedd</a>
+                <div class="playmusic-name">
+                    <a href="#">@Model.NAME</a>
+                </div>
+                <div class="playmusic-artist">
+                    @foreach (var itemArtist in ViewBag.Artist)
+                    {
+                        <a href="#"> @itemArtist </a>
+                    }
+                </div>
             </div>
         </div>
+
         <div class="playmusic-time">
             <label id="playmusic-start"></label>
             <progress id="playmusic-process" value="0" max="100"></progress>
             <label id="playmusic-end"></label>
         </div>
+
         <div class="playmusic-button">
+
             <button id="playmusic-prev">
                 <i class="glyphicon glyphicon-backward"></i>
             </button>
+
             <button id="playButton">
                 <i class="glyphicon glyphicon-play"></i>
                 <i class="glyphicon glyphicon-pause"></i>
             </button>
+
             <button id="playmusic-next">
                 <i class="glyphicon glyphicon-forward"></i>
             </button>
+
             <button id="loopButton">
                 <i class="glyphicon glyphicon-repeat"></i>
             </button>
+
             <div id="volume">
                 <button id="volumeButton">
                     <i class="glyphicon glyphicon-volume-down"></i>
@@ -310,7 +326,9 @@
                 </button>
                 <progress id="volumeProBar" value="100" max="100"></progress>
             </div>
+
         </div>
+
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

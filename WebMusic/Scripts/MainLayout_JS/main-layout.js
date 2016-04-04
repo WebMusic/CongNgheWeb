@@ -1,3 +1,5 @@
+﻿/// <reference path="G:\OneDrive\Lập trình\ASP.NET\PROJECT\WebMusic\WebMusic\Views/PlayOfPart/TagMusic.cshtml" />
+/// <reference path="G:\OneDrive\Lập trình\ASP.NET\PROJECT\WebMusic\WebMusic\Views/PlayOfPart/TagMusic.cshtml" />
 
 
 //login
@@ -181,6 +183,19 @@ $(document).ready(function () {
             }
         }
         
+    });
+
+});
+
+$(document).ready(function() {
+
+    $(".new-track-child-play").click(function() {
+
+        var connection = new ActiveXObject("")
+
+        var id = $(this).attr("sttID");
+
+
     });
 
 });
