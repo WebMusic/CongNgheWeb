@@ -31,6 +31,7 @@ namespace WebMusic.Models
         public string LINK { get; set; }
         public Nullable<System.DateTime> DATE_RELEASE { get; set; }
         public string LINK_IMG { get; set; }
+        public string DESCRIPT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HISTORY_USER> HISTORY_USER { get; set; }

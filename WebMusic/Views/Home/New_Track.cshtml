@@ -1,6 +1,4 @@
-﻿
-@using Microsoft.Ajax.Utilities
-@using WebMusic.Models;
+﻿@using WebMusic.Models;
 @model List<NEW_TRACK>
 
 
@@ -40,7 +38,7 @@
                                 <p></p>
                             </div>
                             <div class="new-track-child-bottom">
-                                <p class="new-track-detail"><a class="new-track-detail-1" href="#" title="@Model.ElementAt(count).NAME">@Model.ElementAt(count).NAME</a></p>
+                                <p class="new-track-detail"><a class="new-track-detail-1" href="@Url.Action("Index","Track",new {@id = Model.ElementAt(count).ID})" title="@Model.ElementAt(count).NAME">@Model.ElementAt(count).NAME</a></p>
                                 <p class="new-track-detail">
                                     @foreach (var item in ViewBag.NewTrackInfo[count][0])
                                     {

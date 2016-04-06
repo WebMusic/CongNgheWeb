@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +260,7 @@
     <Content Include="Content\MainLayout_CSS\fonts\Snake Jacket12.svg" />
     <Content Include="Content\MainLayout_CSS\style-index.css" />
     <Content Include="Content\MainLayout_CSS\style-layout.css" />
+    <Content Include="Content\MainLayout_CSS\Track.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -344,6 +346,8 @@
     <Content Include="Views\Home\HotSlider.cshtml" />
     <Content Include="Views\Home\Top_6_DJ.cshtml" />
     <Content Include="Views\Home\New_Track.cshtml" />
+    <Content Include="Views\Track\Index.cshtml" />
+    <Content Include="Views\Track\Detail_Track.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

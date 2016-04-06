@@ -75,6 +75,8 @@ END
 
 
 
+--Split String
+SELECT LINK_IMG FROM TRACK
 
 
 

@@ -1,5 +1,4 @@
-﻿/// <reference path="G:\OneDrive\Lập trình\ASP.NET\PROJECT\WebMusic\WebMusic\Views/PlayOfPart/TagMusic.cshtml" />
-/// <reference path="G:\OneDrive\Lập trình\ASP.NET\PROJECT\WebMusic\WebMusic\Views/PlayOfPart/TagMusic.cshtml" />
+﻿
 
 
 //login
@@ -17,6 +16,55 @@ $(document).ready(function () {
 });
 
 //end login
+
+// short string
+$(document).ready(function () {
+    var string_Full = $("#short-text-content").text();
+
+    function Display_Short_String() {
+        var len_String_Full = 0;
+        len_String_Full = $("#short-text-content").text().length;
+        if (len_String_Full > 20) {
+            $("#short-text-content").text($("#short-text-content").text().substr(0, 250) + '...');
+        }
+    }
+
+    function Display_More_String() {
+        $("#short-text-content").text(string_Full);
+    }
+
+    Display_Short_String();
+
+    $(".short-text-content-more").click(function () {
+        Display_More_String();
+        $(this).hide();
+        $(".short-text-content-less").show();
+    });
+
+    $(".short-text-content-less").click(function () {
+        Display_Short_String();
+        $(this).hide();
+        $(".short-text-content-more").show();
+    });
+
+});
+// end short string
+
+
+//register
+
+$(document).ready(function () {
+    $("#register-button").click(function () {
+        $(".register-form").show();
+        $(".extra").show();
+    });
+    $("#register-form-button-cancel").click(function () {
+        $(".register-form").hide();
+        $(".extra").hide();
+    });
+});
+
+//end register
 
 
 // genres
@@ -133,11 +181,11 @@ $(document).ready(function () {
     });
 
     //event click fast forward music
-    var PlaymusicLenPer;
+    var playmusicLenPer;
     $("#playmusic-process").click(function (ev) {
-        PlaymusicLenPer = $("#playmusic-process").width() / 100;
+        playmusicLenPer = $("#playmusic-process").width() / 100;
         var lenCurrent_playMusic = ev.clientX - $("#playmusic-process").offset().left;
-        var Playmusic_currentPer = lenCurrent_playMusic / PlaymusicLenPer;
+        var Playmusic_currentPer = lenCurrent_playMusic / playmusicLenPer;
 
         document.getElementById("playmusic-process").value = Playmusic_currentPer;
         document.getElementById("myTune").currentTime = (Playmusic_currentPer / 100) * audio.duration;
@@ -187,38 +235,8 @@ $(document).ready(function () {
 
 });
 
-$(document).ready(function() {
-
-    $(".new-track-child-play").click(function() {
-
-        var connection = new ActiveXObject("")
-
-        var id = $(this).attr("sttID");
 
 
-    });
-
-});
-
-// end tag play music
-
-
-
-
-//register
-
-$(document).ready(function(){
-    $("#register-button").click(function(){
-        $(".register-form").show();
-        $(".extra").show();
-    });
-    $("#register-form-button-cancel").click(function(){
-        $(".register-form").hide();
-        $(".extra").hide();
-    });
-});
-
-//end register
 
 
 
@@ -332,35 +350,3 @@ $(document).ready(function () {
 // end slider-2 not auto
 
 
-// short string
-$(document).ready(function(){
-    var string_Full = $("#short-text-content").text();
-    
-    function Display_Short_String(){
-        var len_String_Full = 0;
-        len_String_Full = $("#short-text-content").text().length;
-        if(len_String_Full > 20){
-            $("#short-text-content").text($("#short-text-content").text().substr(0,250)+'...');
-        }
-    }
-    
-    function Display_More_String(){
-        $("#short-text-content").text(string_Full);
-    }
-    
-    Display_Short_String();
-    
-    $(".short-text-content-more").click(function(){
-        Display_More_String();
-        $(this).hide();
-        $(".short-text-content-less").show();
-    });
-    
-    $(".short-text-content-less").click(function(){
-        Display_Short_String();
-        $(this).hide();
-        $(".short-text-content-more").show();
-    });
-
-});
-// end short string

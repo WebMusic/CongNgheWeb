@@ -178,6 +178,7 @@
           <Property Name="LINK" Type="nvarchar" MaxLength="150" />
           <Property Name="DATE_RELEASE" Type="date" />
           <Property Name="LINK_IMG" Type="nvarchar" MaxLength="150" />
+          <Property Name="DESCRIPT" Type="nvarchar" MaxLength="4000" />
         </EntityType>
         <EntityType Name="TRACK_ARTIST">
           <Key>
@@ -763,6 +764,7 @@
           <Property Name="LINK" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="DATE_RELEASE" Type="DateTime" Precision="0" />
           <Property Name="LINK_IMG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPT" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HISTORY_USER" Relationship="Self.FK_HISTORY_USER_TRACK" FromRole="TRACK" ToRole="HISTORY_USER" />
           <NavigationProperty Name="NEW_TRACK" Relationship="Self.FK_NEW_TRACK_TRACK" FromRole="TRACK" ToRole="NEW_TRACK" />
           <NavigationProperty Name="STATISTIC_TRACK" Relationship="Self.FK_STATISTIC_TRACK_TRACK" FromRole="TRACK" ToRole="STATISTIC_TRACK" />
@@ -1195,6 +1197,7 @@
                 <ScalarProperty Name="LINK" ColumnName="LINK" />
                 <ScalarProperty Name="DATE_RELEASE" ColumnName="DATE_RELEASE" />
                 <ScalarProperty Name="LINK_IMG" ColumnName="LINK_IMG" />
+                <ScalarProperty Name="DESCRIPT" ColumnName="DESCRIPT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
