@@ -1,0 +1,58 @@
+﻿
+
+
+<div class="col-sm-12 detail-song-artist">
+    <div class="detail-song-artist-title">
+        <span>More Track This Artist</span>
+    </div>
+    <div class="detail-song-artist-content">
+
+        <div class="slider-detail-song-artist">
+
+            @{
+                for (int i = 0; i < 5; i++)
+                {
+                    <div stt="0" class="slider-detail-song-artist-img">
+                        <ul>      @*5 the con*@
+                            <li>
+                                <div class="detail-song-artist-song">
+                                    <div class="detail-song-artist-song-top">
+                                        <img src="./img/hot-remix/pot.jpg" alt="">
+                                        <div class="detail-song-artist-song-top-control">
+                                            <button class="detail-song-artist-song-play"><i class="fa fa-play"></i></button>
+                                            <button class="detail-song-artist-song-buy">$2.8</button>
+                                            <button class="detail-song-artist-song-share"><i class="fa fa-facebook"></i>Share</button>
+                                        </div>
+                                        <p></p>
+                                    </div>
+                                    <div class="detail-song-artist-song-bottom">
+                                        <p class="detail-song-artist-song-name">
+                                            <a href="#">Beautiful Nowd</a>
+                                        </p>
+                                        <p class="detail-song-artist-song-artist">
+                                            <a href="#">Zedd</a>
+                                        </p>
+                                        <p class="detail-song-artist-song-label">
+                                            <a href="#">Spinnin Record</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                }
+            }
+
+            
+
+            <div class="slider-detail-song-artist-control">
+                <div stt="0" class="detail-song-artist-button-active detail-song-artist-button"></div>
+                <div stt="1" class="detail-song-artist-button"></div>
+                <div stt="2" class="detail-song-artist-button"></div>
+                <div stt="3" class="detail-song-artist-button"></div>
+                <div stt="4" class="detail-song-artist-button"></div>
+            </div>
+        </div>
+    </div>
+</div>

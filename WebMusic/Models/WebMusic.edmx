@@ -211,6 +211,7 @@
           <Property Name="NAME_ARTIST" Type="nvarchar" MaxLength="100" />
           <Property Name="NAME_LABEL" Type="nvarchar" MaxLength="100" />
           <Property Name="COST" Type="float" />
+          <Property Name="NAME_TRACK" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="USER">
           <Key>
@@ -853,6 +854,7 @@
           <Property Name="NAME_ARTIST" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NAME_LABEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="COST" Type="Double" />
+          <Property Name="NAME_TRACK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ARTIST" Relationship="Self.FK_TRACK_ARTIST_ARTIST" FromRole="TRACK_ARTIST" ToRole="ARTIST" />
           <NavigationProperty Name="TRACK" Relationship="Self.FK_TRACK_ARTIST_TRACK" FromRole="TRACK_ARTIST" ToRole="TRACK" />
         </EntityType>
@@ -1356,6 +1358,7 @@
                 <ScalarProperty Name="NAME_ARTIST" ColumnName="NAME_ARTIST" />
                 <ScalarProperty Name="NAME_LABEL" ColumnName="NAME_LABEL" />
                 <ScalarProperty Name="COST" ColumnName="COST" />
+                <ScalarProperty Name="NAME_TRACK" ColumnName="NAME_TRACK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

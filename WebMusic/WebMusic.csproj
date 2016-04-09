@@ -355,6 +355,7 @@
     <Content Include="Views\Track\Index.cshtml" />
     <Content Include="Views\Track\Detail_Track.cshtml" />
     <Content Include="Views\Track\Track_Total.cshtml" />
+    <Content Include="Views\Track\More_Track_Artist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
