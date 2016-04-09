@@ -17,6 +17,7 @@ namespace WebMusic.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ARTIST()
         {
+            this.REMIX_ARTIST = new HashSet<REMIX_ARTIST>();
             this.SHOWs = new HashSet<SHOW>();
             this.TRACK_ARTIST = new HashSet<TRACK_ARTIST>();
             this.GENREs = new HashSet<GENRE>();
@@ -33,6 +34,8 @@ namespace WebMusic.Models
         public string IMG { get; set; }
     
         public virtual LABEL LABEL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REMIX_ARTIST> REMIX_ARTIST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SHOW> SHOWs { get; set; }
         public virtual STATISTIC_ARTIST STATISTIC_ARTIST { get; set; }

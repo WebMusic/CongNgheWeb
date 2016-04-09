@@ -18,8 +18,8 @@ namespace WebMusic.Models
         public TRACK()
         {
             this.HISTORY_USER = new HashSet<HISTORY_USER>();
+            this.REMIXes = new HashSet<REMIX>();
             this.TRACK_ARTIST = new HashSet<TRACK_ARTIST>();
-            this.GENREs = new HashSet<GENRE>();
             this.USERs = new HashSet<USER>();
         }
     
@@ -32,15 +32,17 @@ namespace WebMusic.Models
         public Nullable<System.DateTime> DATE_RELEASE { get; set; }
         public string LINK_IMG { get; set; }
         public string DESCRIPT { get; set; }
+        public string LENGTH { get; set; }
+        public string GENRE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HISTORY_USER> HISTORY_USER { get; set; }
         public virtual NEW_TRACK NEW_TRACK { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REMIX> REMIXes { get; set; }
         public virtual STATISTIC_TRACK STATISTIC_TRACK { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRACK_ARTIST> TRACK_ARTIST { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GENRE> GENREs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USER> USERs { get; set; }
     }

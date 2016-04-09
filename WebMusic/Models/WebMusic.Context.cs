@@ -33,6 +33,8 @@ namespace WebMusic.Models
         public virtual DbSet<Home_NewTrack> Home_NewTrack { get; set; }
         public virtual DbSet<LABEL> LABELs { get; set; }
         public virtual DbSet<NEW_TRACK> NEW_TRACK { get; set; }
+        public virtual DbSet<REMIX> REMIXes { get; set; }
+        public virtual DbSet<REMIX_ARTIST> REMIX_ARTIST { get; set; }
         public virtual DbSet<SALE> SALEs { get; set; }
         public virtual DbSet<SHOW> SHOWs { get; set; }
         public virtual DbSet<STATISTIC_ARTIST> STATISTIC_ARTIST { get; set; }

@@ -203,6 +203,12 @@
     <Compile Include="Models\NEW_TRACK.cs">
       <DependentUpon>WebMusic.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\REMIX.cs">
+      <DependentUpon>WebMusic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REMIX_ARTIST.cs">
+      <DependentUpon>WebMusic.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SALE.cs">
       <DependentUpon>WebMusic.tt</DependentUpon>
     </Compile>
@@ -348,6 +354,7 @@
     <Content Include="Views\Home\New_Track.cshtml" />
     <Content Include="Views\Track\Index.cshtml" />
     <Content Include="Views\Track\Detail_Track.cshtml" />
+    <Content Include="Views\Track\Track_Total.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

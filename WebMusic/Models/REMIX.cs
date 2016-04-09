@@ -12,23 +12,28 @@ namespace WebMusic.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class GENRE
+    public partial class REMIX
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GENRE()
+        public REMIX()
         {
-            this.ARTISTs = new HashSet<ARTIST>();
-            this.LABELs = new HashSet<LABEL>();
+            this.REMIX_ARTIST = new HashSet<REMIX_ARTIST>();
         }
     
-        public short ID { get; set; }
+        public int ID { get; set; }
         public string NAME { get; set; }
-        public string DESCRIP { get; set; }
-        public Nullable<byte> TEMPO { get; set; }
+        public Nullable<int> TEMPO { get; set; }
+        public string KEY_ { get; set; }
+        public Nullable<double> COST { get; set; }
+        public string LINK { get; set; }
+        public Nullable<System.DateTime> DATE_RELEASE { get; set; }
+        public string LINK_IMG { get; set; }
+        public Nullable<int> ID_TRACK { get; set; }
+        public string LENGTH { get; set; }
+        public string GENRE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ARTIST> ARTISTs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LABEL> LABELs { get; set; }
+        public virtual ICollection<REMIX_ARTIST> REMIX_ARTIST { get; set; }
+        public virtual TRACK TRACK { get; set; }
     }
 }
