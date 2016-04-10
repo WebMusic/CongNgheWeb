@@ -102,7 +102,36 @@ namespace WebMusic.Controllers
             {
                 tempTrack = db.TRACKs.SingleOrDefault(x => x.ID == i);
                 listTrack.Add(new List<string>() {tempTrack.ID.ToString() , tempTrack.NAME, tempTrack.LINK_IMG , tempTrack.LINK , tempTrack.COST.ToString()});
-                listInfo.Add(new List<List<string>>() { db.TRACK_ARTIST.Where(p=>p.ID_TRACK==i).Select(p=>p.NAME_ARTIST).ToList() , db.TRACK_ARTIST.Where(p => p.ID_TRACK == i).Select(p => p.NAME_LABEL).ToList() });
+                listInfo.Add(new List<List<string>>() { db.TRACK_ARTIST.Where(p=>p.ID_TRACK==i).Select(p=>p.NAME_ARTIST).ToList() , db.TRACK_ARTIST.Where(p => p.ID_TRACK == i).Select(p => p.NAME_LABEL).Distinct().ToList() });
+            }
+
+            ViewBag.listTrack = listTrack;
+            ViewBag.listInfo = listInfo;
+
+
+            return PartialView();
+        }
+
+
+        public PartialViewResult More_Track_Label(int id)       //id la id cua track -> lay id artist tu do 
+        {
+
+            List<List<string>> listTrack = new List<List<string>>();
+            List<List<List<string>>> listInfo = new List<List<List<string>>>();
+
+            //lay name cua tat ca cac label tham gia
+            List<string> tempIdArtist = db.TRACK_ARTIST.Where(p => p.ID_TRACK == id).Select(p => p.NAME_LABEL).ToList();
+            //lay id cua tat ca cac track cua cac label do
+            List<int> allIdTrackLabel = db.TRACK_ARTIST.Where(x => tempIdArtist.Contains(x.NAME_LABEL)).Select(x => x.ID_TRACK).Take(40).ToList();
+            allIdTrackLabel = allIdTrackLabel.Distinct().ToList();
+            allIdTrackLabel.RemoveAll(x => x == id);
+
+            TRACK tempTrack = new TRACK();
+            foreach (var i in allIdTrackLabel)
+            {
+                tempTrack = db.TRACKs.SingleOrDefault(x => x.ID == i);
+                listTrack.Add(new List<string>() { tempTrack.ID.ToString(), tempTrack.NAME, tempTrack.LINK_IMG, tempTrack.LINK, tempTrack.COST.ToString() });
+                listInfo.Add(new List<List<string>>() { db.TRACK_ARTIST.Where(p => p.ID_TRACK == i).Select(p => p.NAME_ARTIST).ToList(), db.TRACK_ARTIST.Where(p => p.ID_TRACK == i).Select(p => p.NAME_LABEL).Distinct().ToList() });
             }
 
             ViewBag.listTrack = listTrack;
